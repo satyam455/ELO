@@ -474,8 +474,8 @@ contract ELOToken is Context, IERC20, IERC20Metadata, Ownable {
         // Verify allocation percentages add up to 100%   //@note
         require(_totalSupply == _presaleAmount + _stakingAmount + _cexReseveredAmount + _teamAmount + _rewardAmount + _dexAmount + _customerAmount + _airdropAmount, "Total supply must be equal to sum of allocation");
         
-        _mint(_msgSender(), _totalSupply); // Mint entire supply to contract deployer
-        mintingFinishedPermanent = true; // Permanently disable future minting
+        _mint(_msgSender(), _totalSupply); // Mint entire supply to contract deployer @note
+        mintingFinishedPermanent = true; // Permanently disable future minting @note
         
         // Initial Send tokens
         transfer(presaleAddress, _presaleAmount);
